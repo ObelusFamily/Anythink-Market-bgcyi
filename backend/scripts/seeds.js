@@ -8,6 +8,11 @@ const Comment = mongoose.model("Comment");
 const slug = require("slug");
 mongoose.connect(process.env.MONGODB_URI);
 
+/*
+Item.deleteMany({}).catch(function(err){console.log(err)});
+User.deleteMany({}).catch(function(err){console.log(err)});
+Comment.deleteMany({}).catch(function(err){console.log(err)});
+*/
 createUser = function (index) {
   var user = new User();
   user.username = `user${index}`;
@@ -34,7 +39,7 @@ createComment = function (index, seller, item) {
   return comment;
 };
 
-for (let i = 0; i < 5; i++) {
+for (let i = 0; i < 100; i++) {
   let currUser = createUser(i);
   currUser.save(function (err) {
     if (err) {
@@ -57,3 +62,12 @@ for (let i = 0; i < 5; i++) {
     }
   });
 }
+
+function delay(time) {
+  return new Promise((resolve) => setTimeout(resolve, time));
+}
+
+delay(10000).then(() => {
+  console.log("done");
+  mongoose.connection.close();
+});
