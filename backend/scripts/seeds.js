@@ -41,7 +41,6 @@ for (let i = 0; i < 100; i++) {
       console.log(err);
       return;
     }
-    console.log("Successfully saved user");
   });
   let currItem = createItem(i, currUser);
   currItem.save(function (err) {
@@ -49,7 +48,6 @@ for (let i = 0; i < 100; i++) {
       console.log(err);
       return;
     }
-    console.log("Successfully saved item");
   });
   let currComment = createComment(i, currUser, currItem);
   currComment.save(function (err) {
@@ -57,6 +55,5 @@ for (let i = 0; i < 100; i++) {
       console.log(err);
       return;
     }
-    console.log("Successfully saved comment");
   });
 }
