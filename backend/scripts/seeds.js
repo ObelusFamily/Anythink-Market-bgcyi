@@ -34,7 +34,7 @@ createComment = function (index, seller, item) {
   return comment;
 };
 
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < 5; i++) {
   let currUser = createUser(i);
   currUser.save(function (err) {
     if (err) {
