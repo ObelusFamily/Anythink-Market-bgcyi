@@ -49,10 +49,14 @@ class Editor extends React.Component {
 
     this.submitForm = (ev) => {
       ev.preventDefault();
+      let image = "/placeholder.png";
+      if (this.props.image) {
+        image = this.props.image;
+      }
       const item = {
         title: this.props.title,
         description: this.props.description,
-        image: this.props.image,
+        image: image,
         tagList: this.props.tagList,
       };
 
