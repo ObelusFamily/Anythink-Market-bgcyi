@@ -4,6 +4,7 @@ import agent from "../../agent";
 
 const Banner = (props) => {
   const handleSearch = (title) => {
+    //props.updateSearchTerm(title);
     if (title.length < 3) {
       title = "";
     }
