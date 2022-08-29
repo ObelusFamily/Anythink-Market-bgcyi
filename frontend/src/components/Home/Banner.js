@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../imgs/logo.png";
 import agent from "../../agent";
 
 const Banner = (props) => {
+  const [hideSearch, setHideSearch] = useState(true);
   const handleSearch = (title) => {
-    //props.updateSearchTerm(title);
     if (title.length < 3) {
       title = "";
     }
@@ -20,10 +20,13 @@ const Banner = (props) => {
       <div className="container p-4 text-center">
         <img src={logo} alt="banner" />
         <div>
-          <span id="get-part">A place to get</span>
+          <span id="get-part">
+            A place to <span onClick={() => setHideSearch(false)}>get</span>
+          </span>
           <input
             type="text"
             id="search-box"
+            className={hideSearch ? "d-none" : ""}
             onChange={(e) => handleSearch(e.target.value)}
             placeholder="What is it you truly desire?"
           />
