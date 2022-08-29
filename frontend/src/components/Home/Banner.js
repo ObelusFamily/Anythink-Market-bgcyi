@@ -20,7 +20,7 @@ const Banner = (props) => {
       <div className="container p-4 text-center">
         <img src={logo} alt="banner" />
         <div>
-          <span onClick={() => setshowSearch(true)} onid="get-part">
+          <span onClick={() => setshowSearch(true)} id="get-part">
             A place to get
           </span>
           {showSearch ? (
