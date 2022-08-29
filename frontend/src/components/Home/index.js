@@ -12,7 +12,6 @@ import {
 } from "../../constants/actionTypes";
 
 const Promise = global.Promise;
-
 const mapStateToProps = (state) => ({
   ...state.home,
   appName: state.common.appName,
@@ -48,7 +47,7 @@ class Home extends React.Component {
   render() {
     return (
       <div className="home-page">
-        <Banner onSearch={this.props.onSearch} />
+        <Banner onSearch={this.props.onSearch}/>
 
         <div className="container page">
           <Tags tags={this.props.tags} onClickTag={this.props.onClickTag} />
